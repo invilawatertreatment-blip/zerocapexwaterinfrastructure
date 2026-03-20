@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invila TM — Zero Capex Water Infrastructure</title>
+  <title>Invila <sup>TM</sup> — Zero Capex Water Infrastructure</title>
   <style>
     :root {
       --bg: #f5f8fb;
@@ -419,24 +419,129 @@
       align-content: start;
     }
     .dash-large {
-      min-height: 210px;
-      border-radius: 18px;
-      border: 1px solid #d7e6f2;
-      background: linear-gradient(180deg, #eef5fb 0%, #f8fbfd 100%);
+      min-height: 360px;
+      border-radius: 22px;
+      border: 1px solid #cfe0ee;
+      background: linear-gradient(180deg, #0f172a 0%, #162135 100%);
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow);
+      padding: 18px;
     }
     .dash-large::before {
       content: "";
       position: absolute;
-      inset: 16px;
-      border-radius: 12px;
-      background:
-        linear-gradient(180deg, rgba(11,92,171,.12), rgba(11,92,171,.02)),
-        linear-gradient(90deg, transparent 0, transparent 8%, rgba(11,92,171,.08) 8%, rgba(11,92,171,.08) 10%, transparent 10%, transparent 18%, rgba(15,118,110,.12) 18%, rgba(15,118,110,.12) 20%, transparent 20%),
-        linear-gradient(180deg, transparent 0, transparent 70%, rgba(11,92,171,.08) 70%, rgba(11,92,171,.08) 72%, transparent 72%),
-        linear-gradient(135deg, #ffffff, #eef6fb);
-      border: 1px solid rgba(11,92,171,.08);
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 28%), radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.07), transparent 24%);
+      pointer-events: none;
+    }
+    .scada-preview {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .scada-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 0 2px;
+    }
+    .scada-title strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #e2e8f0;
+    }
+    .scada-title strong em {
+      color: #7dd3fc;
+      font-style: normal;
+    }
+    .scada-title span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .scada-clock {
+      min-width: 112px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      color: #7dd3fc;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .scada-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .scada-kpi {
+      background: rgba(15, 23, 42, 0.46);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .scada-kpi label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .scada-kpi strong {
+      display: inline-block;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #f8fafc;
+      font-weight: 800;
+    }
+    .scada-kpi small {
+      display: inline-block;
+      margin-left: 6px;
+      color: #94a3b8;
+      font-size: 11px;
+    }
+    .scada-kpi .tone-sky { color: #7dd3fc; }
+    .scada-kpi .tone-green { color: #86efac; }
+    .scada-kpi .tone-yellow { color: #fde68a; }
+    .scada-kpi .tone-white { color: #f8fafc; }
+    .scada-charts {
+      display: grid;
+      grid-template-columns: 1.45fr .85fr;
+      gap: 10px;
+    }
+    .scada-panel {
+      min-height: 128px;
+      background: rgba(15, 23, 42, 0.42);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .scada-panel h4 {
+      margin: 0 0 8px;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+    .scada-panel canvas {
+      width: 100% !important;
+      height: 92px !important;
     }
     .mini-bars {
       display: grid;
@@ -449,6 +554,16 @@
       background: #fff;
       padding: 14px;
       min-height: 76px;
+    }
+    .mini-bars strong {
+      display: block;
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .mini-bars small {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .modular-box {
@@ -831,7 +946,7 @@
         <div class="hero-copy">
           <span class="eyebrow">Zero Capex Water Infrastructure for Industry</span>
           <h1>Hadirkan Air Industri yang Andal Tanpa Membebani Capex Perusahaan</h1>
-          <p class="hero-lead">Invila TM membantu industri menghadirkan suplai air yang lebih andal, lebih terukur, dan siap mendukung pertumbuhan—tanpa investasi awal besar. Dengan model <strong>No CAPEX – Pay per m³</strong>, perusahaan dapat menjaga cash flow tetap sehat sambil memastikan kebutuhan utilitas tetap berjalan.</p>
+          <p class="hero-lead">Invila <sup>TM</sup> membantu industri menghadirkan suplai air yang lebih andal, lebih terukur, dan siap mendukung pertumbuhan—tanpa investasi awal besar. Dengan model <strong>No CAPEX – Pay per m³</strong>, perusahaan dapat menjaga cash flow tetap sehat sambil memastikan kebutuhan utilitas tetap berjalan.</p>
           <div class="cta-row">
             <a class="btn primary" href="#final-cta">Pelajari Opsi Konsultasi</a>
           </div>
@@ -840,7 +955,6 @@
             <li>Revamp, operasi, dan monitoring</li>
             <li>Monitoring berbasis SCADA-IoT</li>
           </ul>
-          <p class="micro">Siapkan: <strong>nama perusahaan, lokasi, dan kebutuhan m³/hari</strong>.</p>
           <p class="tagline">Pay for Water, Not Infrastructure</p>
         </div>
 
@@ -923,9 +1037,9 @@
       <div>
         <div class="section-head">
           <h2>Zero Capex Water Infrastructure: Cara Lebih Ringan untuk Menjalankan Project yang Penting</h2>
-          <p>Dengan Invila TM, Anda tidak perlu membebani struktur keuangan dengan investasi awal besar untuk menghadirkan air industri yang tersedia, terjaga kualitasnya, dan siap mendukung operasional.</p>
+          <p>Dengan Invila <sup>TM</sup>, Anda tidak perlu membebani struktur keuangan dengan investasi awal besar untuk menghadirkan air industri yang tersedia, terjaga kualitasnya, dan siap mendukung operasional.</p>
         </div>
-        <p>Invila TM menghadirkan air bersih sebagai layanan, bukan sekadar aset atau instalasi. Model <strong>No CAPEX – Pay per m³</strong> membantu perusahaan memindahkan beban investasi awal menjadi struktur biaya yang lebih terukur, sambil tetap menjaga keandalan sistem, visibilitas performa, dan fleksibilitas operasional.</p>
+        <p>Invila <sup>TM</sup> menghadirkan air bersih sebagai layanan, bukan sekadar aset atau instalasi. Model <strong>No CAPEX – Pay per m³</strong> membantu perusahaan memindahkan beban investasi awal menjadi struktur biaya yang lebih terukur, sambil tetap menjaga keandalan sistem, visibilitas performa, dan fleksibilitas operasional.</p>
         <a class="btn primary" href="#efficiency-calculator">Tinjau Simulasi Efisiensi</a>
       </div>
       <div class="card-grid cols-2">
@@ -943,7 +1057,7 @@
     <div class="container">
       <div class="section-head center">
         <h2>Anda Tidak Membeli Infrastruktur. Anda Membeli Hasil yang Bisa Diandalkan.</h2>
-        <p>Invila TM tidak hadir sebagai vendor instalasi biasa. Kami hadir untuk memastikan suplai air tersedia, kualitas terjaga, sistem berjalan, dan performa dapat dipantau secara konsisten.</p>
+        <p>Invila <sup>TM</sup> tidak hadir sebagai vendor instalasi biasa. Kami hadir untuk memastikan suplai air tersedia, kualitas terjaga, sistem berjalan, dan performa dapat dipantau secara konsisten.</p>
       </div>
       <div class="card-grid cols-4">
         <article class="card"><h3>Suplai air yang tersedia</h3><p>Bukan hanya membangun sistem, tetapi memastikan kebutuhan air mendukung operasi bisnis.</p></article>
@@ -1093,7 +1207,7 @@
         </div>
       </div>
 
-      <p class="calculator-note" style="margin-top:18px;">Output ini bersifat simulasi awal untuk membantu percakapan. Untuk assessment yang lebih akurat, lanjutkan ke WhatsApp agar tim Invila TM meninjau kebutuhan site, lokasi, dan kebutuhan m³/hari Anda.</p>
+      <p class="calculator-note" style="margin-top:18px;">Output ini bersifat simulasi awal untuk membantu percakapan. Untuk assessment yang lebih akurat, lanjutkan ke WhatsApp agar tim Invila <sup>TM</sup> meninjau kebutuhan site, lokasi, dan kebutuhan m³/hari Anda.</p>
     </div>
   </section>
 
@@ -1116,7 +1230,7 @@
     <div class="container">
       <div class="section-head center">
         <h2>Portfolio yang Menunjukkan Skala, Fleksibilitas, dan Kemampuan Eksekusi</h2>
-        <p>Dari new build, uprating, hingga reuse—Invila TM hadir pada project yang menuntut hasil nyata, kontrol yang jelas, dan keberlanjutan operasional.</p>
+        <p>Dari new build, uprating, hingga reuse—Invila <sup>TM</sup> hadir pada project yang menuntut hasil nyata, kontrol yang jelas, dan keberlanjutan operasional.</p>
       </div>
       <div class="card-grid cols-3">
         <article class="project-card"><span class="metric">833 LPS</span><h3>PT Petrokimia Gresik — Surabaya</h3><p>WTP skala besar untuk kebutuhan industri.</p></article>
@@ -1136,7 +1250,7 @@
     <div class="container">
       <div class="section-head center">
         <h2>Lebih dari Sekadar Bangun Baru</h2>
-        <p>Invila TM dirancang untuk kebutuhan yang berubah, sistem yang harus tetap berjalan, dan operasional yang menuntut keandalan.</p>
+        <p>Invila <sup>TM</sup> dirancang untuk kebutuhan yang berubah, sistem yang harus tetap berjalan, dan operasional yang menuntut keandalan.</p>
       </div>
       <div class="card-grid cols-5">
         <article class="card"><h3>New Build</h3></article>
@@ -1151,11 +1265,52 @@
   <section class="section">
     <div class="container grid-2">
       <div class="visual-surface">
-        <div class="dash-large"><span>Preview Dashboard SCADA-IoT</span></div>
+        <div class="dash-large">
+          <span>Preview Dashboard SCADA-IoT</span>
+          <div class="scada-preview">
+            <div class="scada-top">
+              <div class="scada-title">
+                <strong>WTP <em>SCADA-IoT</em></strong>
+                <span>System Capacity: 1500 m³/day</span>
+              </div>
+              <div class="scada-clock" id="scadaClock">00:00:00</div>
+            </div>
+
+            <div class="scada-kpis">
+              <div class="scada-kpi">
+                <label>Turbidity</label>
+                <strong class="tone-sky" id="scadaTurbidity">1.50</strong><small>NTU</small>
+              </div>
+              <div class="scada-kpi">
+                <label>pH Level</label>
+                <strong class="tone-green" id="scadaPH">7.20</strong><small>Stable</small>
+              </div>
+              <div class="scada-kpi">
+                <label>Residual Chlorine</label>
+                <strong class="tone-yellow" id="scadaChlorine">0.35</strong><small>mg/L</small>
+              </div>
+              <div class="scada-kpi">
+                <label>Production Rate</label>
+                <strong class="tone-white" id="scadaFlow">25.0</strong><small>LPS</small>
+              </div>
+            </div>
+
+            <div class="scada-charts">
+              <div class="scada-panel">
+                <h4>Water Quality Analytics</h4>
+                <canvas id="previewQualityChart"></canvas>
+              </div>
+              <div class="scada-panel">
+                <h4>Turbidity Real-Time</h4>
+                <canvas id="previewTurbidityChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="mini-bars">
-          <div><strong>Flow</strong><br><small>Live monitoring</small></div>
-          <div><strong>Quality</strong><br><small>Trend visibility</small></div>
-          <div><strong>Alert</strong><br><small>Operational response</small></div>
+          <div><strong>Flow</strong><small id="scadaFlowState">Live monitoring</small></div>
+          <div><strong>Quality</strong><small id="scadaQualityState">Trend visibility</small></div>
+          <div><strong>Alert</strong><small id="scadaAlertState">Operational response</small></div>
         </div>
       </div>
       <div>
@@ -1163,7 +1318,7 @@
           <h2>Kontrol yang Lebih Jelas. Monitoring yang Lebih Transparan.</h2>
           <p>Keandalan sistem tidak cukup hanya dibangun. Ia harus dipantau, dievaluasi, dan dioptimasi secara konsisten.</p>
         </div>
-        <p>Dengan pendekatan SCADA-IoT, Invila TM membantu perusahaan mendapatkan visibilitas yang lebih baik terhadap performa sistem, tren operasional, dan kebutuhan respons yang lebih cepat.</p>
+        <p>Dengan pendekatan SCADA-IoT, Invila <sup>TM</sup> membantu perusahaan mendapatkan visibilitas yang lebih baik terhadap performa sistem, tren operasional, dan kebutuhan respons yang lebih cepat.</p>
         <div class="card-grid cols-2">
           <article class="card"><h3>Transparansi data lebih baik</h3></article>
           <article class="card"><h3>Respons operasional lebih cepat</h3></article>
@@ -1175,15 +1330,12 @@
   </section>
 
   <section class="section value-band">
-    <div class="container grid-2">
-      <div>
-        <div class="section-head">
-          <h2>Dirancang untuk Kecepatan Implementasi dan Skalabilitas</h2>
-          <p>Dukungan unit modular membantu percepatan implementasi sekaligus memberi ruang untuk penyesuaian kebutuhan di masa depan.</p>
-        </div>
-        <p>Dalam banyak project, kecepatan dan fleksibilitas menjadi faktor penting. Dengan dukungan unit modular dan pendekatan implementasi yang lebih adaptif, Invila TM membantu perusahaan bergerak lebih cepat tanpa kehilangan kontrol atas kualitas dan performa.</p>
+    <div class="container">
+      <div class="section-head center">
+        <h2>Dirancang untuk Kecepatan Implementasi dan Skalabilitas</h2>
+        <p>Dukungan unit modular membantu percepatan implementasi sekaligus memberi ruang untuk penyesuaian kebutuhan di masa depan.</p>
       </div>
-      <div class="modular-box"><span>Preview Unit Modular</span></div>
+      <p class="center-note">Dalam banyak project, kecepatan dan fleksibilitas menjadi faktor penting. Dengan dukungan unit modular dan pendekatan implementasi yang lebih adaptif, Invila <sup>TM</sup> membantu perusahaan bergerak lebih cepat tanpa kehilangan kontrol atas kualitas dan performa.</p>
     </div>
   </section>
 
@@ -1197,7 +1349,7 @@
         <details><summary>Apa keuntungan utamanya dibanding membeli sistem sendiri?</summary><p>Perusahaan tidak perlu menanggung seluruh beban investasi awal, risiko keusangan teknologi, dan kompleksitas pengelolaan sendirian.</p></details>
         <details><summary>Apakah model ini cocok untuk semua industri?</summary><p>Kesesuaian tergantung kebutuhan air, target operasional, profil risiko, dan prioritas finansial masing-masing perusahaan.</p></details>
         <details><summary>Bagaimana jika kebutuhan kapasitas berubah?</summary><p>Pendekatan kami dirancang agar lebih fleksibel terhadap perubahan kebutuhan dan perkembangan project.</p></details>
-        <details><summary>Apakah Invila TM hanya menangani project baru?</summary><p>Tidak. Invila TM juga dapat mendukung revamp, uprating, dan optimasi sistem yang sudah berjalan.</p></details>
+        <details><summary>Apakah Invila <sup>TM</sup> hanya menangani project baru?</summary><p>Tidak. Invila <sup>TM</sup> juga dapat mendukung revamp, uprating, dan optimasi sistem yang sudah berjalan.</p></details>
         <details><summary>Bagaimana visibilitas performa sistem?</summary><p>Performa sistem dapat dipantau melalui pendekatan SCADA-IoT untuk membantu kontrol dan evaluasi yang lebih jelas.</p></details>
       </div>
     </div>
@@ -1207,7 +1359,7 @@
     <div class="container final-box">
       <span class="section-label">Tahap berikutnya</span>
       <h2>Mari Bahas Cara Menghadirkan Air Industri yang Lebih Ringan untuk Bisnis Anda</h2>
-      <p>Jika project Anda tertahan karena beban investasi awal, Invila TM siap membantu memetakan pendekatan yang lebih masuk akal secara finansial dan operasional.</p>
+      <p>Jika project Anda tertahan karena beban investasi awal, Invila <sup>TM</sup> siap membantu memetakan pendekatan yang lebih masuk akal secara finansial dan operasional.</p>
       <div class="cta-row" style="justify-content:center; margin-top: 18px;">
         <a class="btn primary" href="https://wa.me/6285219493322?text=Halo%20Pak%20Irfon,%20saya%20ingin%20diskusi%20kebutuhan%20air%20industri%20untuk%20perusahaan%20kami.%0A%0ANama%20perusahaan:%0ALokasi:%0AKebutuhan:%20___%20m%C2%B3/hari" target="_blank" rel="noopener noreferrer">Chat WhatsApp untuk Analisa Project</a>
       </div>
@@ -1246,6 +1398,9 @@
   </footer>
   <script>
     let myChart;
+    let previewQualityChart;
+    let previewTurbidityChart;
+    let scadaPreviewStarted = false;
 
     function updateDashboard() {
       const vol = parseFloat(document.getElementById('vol_total')?.value) || 0;
@@ -1366,7 +1521,147 @@
       });
     }
 
-    window.addEventListener('load', updateDashboard);
+    function createPreviewScadaCharts() {
+      const qualityCanvas = document.getElementById('previewQualityChart');
+      const turbidityCanvas = document.getElementById('previewTurbidityChart');
+      if (!qualityCanvas || !turbidityCanvas || typeof Chart === 'undefined') return;
+
+      const axisColor = 'rgba(148, 163, 184, 0.18)';
+      const tickColor = '#94a3b8';
+      const commonPreviewOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            labels: {
+              color: '#cbd5e1',
+              boxWidth: 8,
+              boxHeight: 8,
+              usePointStyle: true,
+              pointStyle: 'circle',
+              font: { size: 9, weight: '600' }
+            }
+          }
+        },
+        scales: {
+          x: { display: false, grid: { display: false } },
+          y: {
+            display: true,
+            ticks: { color: tickColor, font: { size: 9 } },
+            grid: { color: axisColor }
+          }
+        },
+        animation: { duration: 600 }
+      };
+
+      previewQualityChart = new Chart(qualityCanvas.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: Array(14).fill(''),
+          datasets: [
+            { label: 'TDS', data: [], borderColor: '#7dd3fc', borderWidth: 2, pointRadius: 0, tension: 0.35 },
+            { label: 'COD', data: [], borderColor: '#fcd34d', borderWidth: 2, pointRadius: 0, tension: 0.35 },
+            { label: 'BOD', data: [], borderColor: '#fca5a5', borderWidth: 2, pointRadius: 0, tension: 0.35 },
+            { label: 'TSS', data: [], borderColor: '#86efac', borderWidth: 2, pointRadius: 0, tension: 0.35 }
+          ]
+        },
+        options: commonPreviewOptions
+      });
+
+      previewTurbidityChart = new Chart(turbidityCanvas.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: Array(14).fill(''),
+          datasets: [
+            {
+              label: 'NTU',
+              data: [],
+              borderColor: '#7dd3fc',
+              backgroundColor: 'rgba(125, 211, 252, 0.12)',
+              fill: true,
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.35
+            }
+          ]
+        },
+        options: {
+          ...commonPreviewOptions,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { display: false, grid: { display: false } },
+            y: {
+              min: 0.5,
+              max: 3.5,
+              ticks: { color: tickColor, font: { size: 9 } },
+              grid: { color: axisColor }
+            }
+          }
+        }
+      });
+    }
+
+    function updateScadaPreview() {
+      const randomBetween = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
+      const turbidity = randomBetween(1.10, 2.90);
+      const ph = randomBetween(6.90, 7.60);
+      const chlorine = randomBetween(0.25, 0.45);
+      const flow = randomBetween(24.8, 25.2);
+
+      const clockEl = document.getElementById('scadaClock');
+      const turbidityEl = document.getElementById('scadaTurbidity');
+      const phEl = document.getElementById('scadaPH');
+      const chlorineEl = document.getElementById('scadaChlorine');
+      const flowEl = document.getElementById('scadaFlow');
+      const flowStateEl = document.getElementById('scadaFlowState');
+      const qualityStateEl = document.getElementById('scadaQualityState');
+      const alertStateEl = document.getElementById('scadaAlertState');
+
+      if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('id-ID', { hour12: false });
+      if (turbidityEl) turbidityEl.textContent = turbidity;
+      if (phEl) phEl.textContent = ph;
+      if (chlorineEl) chlorineEl.textContent = chlorine;
+      if (flowEl) flowEl.textContent = flow;
+      if (flowStateEl) flowStateEl.textContent = 'Live monitoring';
+      if (qualityStateEl) qualityStateEl.textContent = 'Trend visibility';
+      if (alertStateEl) alertStateEl.textContent = parseFloat(turbidity) > 2.4 ? 'Check dosing trend' : 'Operational response';
+
+      if (previewQualityChart) {
+        const nextValues = [
+          randomBetween(120, 220),
+          randomBetween(18, 48),
+          randomBetween(4, 12),
+          randomBetween(3, 15)
+        ];
+        previewQualityChart.data.datasets.forEach((dataset, index) => {
+          dataset.data.push(nextValues[index]);
+          if (dataset.data.length > 14) dataset.data.shift();
+        });
+        previewQualityChart.update('none');
+      }
+
+      if (previewTurbidityChart) {
+        previewTurbidityChart.data.datasets[0].data.push(turbidity);
+        if (previewTurbidityChart.data.datasets[0].data.length > 14) {
+          previewTurbidityChart.data.datasets[0].data.shift();
+        }
+        previewTurbidityChart.update('none');
+      }
+    }
+
+    function initScadaPreview() {
+      if (scadaPreviewStarted) return;
+      createPreviewScadaCharts();
+      updateScadaPreview();
+      scadaPreviewStarted = true;
+      setInterval(updateScadaPreview, 2200);
+    }
+
+    window.addEventListener('load', () => {
+      updateDashboard();
+      initScadaPreview();
+    });
   </script>
 </body>
 </html>
