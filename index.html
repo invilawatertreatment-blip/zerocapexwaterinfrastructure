@@ -103,7 +103,21 @@
       gap: 2px;
     }
     .brand strong { font-size: 20px; }
-    .brand span { font-size: 12px; color: var(--muted); }
+    .brand strong sup {
+      font-size: 0.42em;
+      line-height: 0;
+      vertical-align: super;
+      position: relative;
+      top: -0.08em;
+      font-weight: 700;
+    }
+    .brand span {
+      font-size: 13.5px;
+      line-height: 1.25;
+      color: var(--muted);
+      font-weight: 600;
+      max-width: 360px;
+    }
 
     .nav-actions {
       display: flex;
@@ -539,6 +553,20 @@
       padding: 24px;
     }
     .identity h3 { font-size: 28px; margin-bottom: 8px; }
+    .identity h3 sup {
+      font-size: 0.42em;
+      line-height: 0;
+      vertical-align: super;
+      position: relative;
+      top: -0.08em;
+      font-weight: 700;
+    }
+    .identity p em {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--muted);
+      font-style: italic;
+    }
 
     .sticky-wa {
       position: fixed;
@@ -785,18 +813,17 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <a class="sticky-wa" href="#final-cta">Analisa Project via WhatsApp</a>
+  
 
   <section class="hero">
     <div class="container hero-wrap">
       <div class="nav">
         <div class="brand">
-          <strong>Invila TM</strong>
-          <span>Brand of PT. Invila Tirta Nusantara</span>
+          <strong>Invila <sup>TM</sup></strong>
+          <span><em>Empowering Industry with Zero CAPEX Water Infrastructure</em></span>
         </div>
         <div class="nav-actions">
-          <a class="btn secondary" href="#projects">Lihat Portfolio</a>
-          <a class="btn primary" href="#final-cta">Chat WhatsApp</a>
+          <a class="btn secondary" href="#projects">Tinjau Portfolio</a>
         </div>
       </div>
 
@@ -806,8 +833,7 @@
           <h1>Hadirkan Air Industri yang Andal Tanpa Membebani Capex Perusahaan</h1>
           <p class="hero-lead">Invila TM membantu industri menghadirkan suplai air yang lebih andal, lebih terukur, dan siap mendukung pertumbuhan—tanpa investasi awal besar. Dengan model <strong>No CAPEX – Pay per m³</strong>, perusahaan dapat menjaga cash flow tetap sehat sambil memastikan kebutuhan utilitas tetap berjalan.</p>
           <div class="cta-row">
-            <a class="btn primary" href="#final-cta">Chat WhatsApp untuk Analisa Project</a>
-            <a class="btn secondary" href="#final-cta">Jadwalkan Site Visit</a>
+            <a class="btn primary" href="#final-cta">Pelajari Opsi Konsultasi</a>
           </div>
           <ul class="hero-points">
             <li>No CAPEX – Pay per m³</li>
@@ -900,7 +926,7 @@
           <p>Dengan Invila TM, Anda tidak perlu membebani struktur keuangan dengan investasi awal besar untuk menghadirkan air industri yang tersedia, terjaga kualitasnya, dan siap mendukung operasional.</p>
         </div>
         <p>Invila TM menghadirkan air bersih sebagai layanan, bukan sekadar aset atau instalasi. Model <strong>No CAPEX – Pay per m³</strong> membantu perusahaan memindahkan beban investasi awal menjadi struktur biaya yang lebih terukur, sambil tetap menjaga keandalan sistem, visibilitas performa, dan fleksibilitas operasional.</p>
-        <a class="btn primary" href="#final-cta">Minta Analisa Project Anda</a>
+        <a class="btn primary" href="#efficiency-calculator">Tinjau Simulasi Efisiensi</a>
       </div>
       <div class="card-grid cols-2">
         <article class="card"><h3>Tanpa investasi awal besar</h3><p>Project dapat dimulai tanpa mengunci modal besar di depan.</p></article>
@@ -1062,7 +1088,7 @@
           </div>
 
           <div style="text-align:center;">
-            <button type="button" class="btn primary" style="min-height:58px; padding:0 28px;" onclick="kirimWA()">Konsultasi SPAM via WhatsApp</button>
+            <a class="btn primary" style="min-height:58px; padding:0 28px;" href="#final-cta">Lihat Opsi Diskusi Lanjut</a>
           </div>
         </div>
       </div>
@@ -1179,12 +1205,11 @@
 
   <section class="section final-cta" id="final-cta">
     <div class="container final-box">
-      <span class="section-label">CTA utama</span>
+      <span class="section-label">Tahap berikutnya</span>
       <h2>Mari Bahas Cara Menghadirkan Air Industri yang Lebih Ringan untuk Bisnis Anda</h2>
       <p>Jika project Anda tertahan karena beban investasi awal, Invila TM siap membantu memetakan pendekatan yang lebih masuk akal secara finansial dan operasional.</p>
       <div class="cta-row" style="justify-content:center; margin-top: 18px;">
-        <a class="btn primary" href="#">Chat WhatsApp untuk Analisa Project</a>
-        <a class="btn secondary" href="#">Jadwalkan Site Visit</a>
+        <a class="btn primary" href="https://wa.me/6285219493322?text=Halo%20Pak%20Irfon,%20saya%20ingin%20diskusi%20kebutuhan%20air%20industri%20untuk%20perusahaan%20kami.%0A%0ANama%20perusahaan:%0ALokasi:%0AKebutuhan:%20___%20m%C2%B3/hari" target="_blank" rel="noopener noreferrer">Chat WhatsApp untuk Analisa Project</a>
       </div>
       <div class="lead-prompt">
         <span class="lead-pill">Nama perusahaan</span>
@@ -1213,8 +1238,8 @@
         </div>
       </div>
       <div class="footer-box identity">
-        <h3>Invila TM</h3>
-        <p><strong>Brand of PT. Invila Tirta Nusantara</strong></p>
+        <h3>Invila <sup>TM</sup></h3>
+        <p><em>Empowering Industry with Zero CAPEX Water Infrastructure</em></p>
         <p>Sentra Niaga 2 No. 5, Harapan Indah, Bekasi 17131, Jawa Barat</p>
       </div>
     </div>
@@ -1339,15 +1364,6 @@
           }
         }
       });
-    }
-
-    function kirimWA() {
-      const vol = document.getElementById('vol_total')?.value || '';
-      const saving = document.getElementById('five_year_saving')?.innerText || '';
-      const msg = `Halo Pak Irfon, saya ingin konsultasi sistem SPAM.
-
-Simulasi saya menghasilkan potensi NET SAVING sebesar ${saving} dalam 5 tahun dengan kapasitas ${vol} m³/hari. Mohon atur waktu untuk diskusi teknis.`;
-      window.open(`https://wa.me/6285219493322?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     window.addEventListener('load', updateDashboard);
