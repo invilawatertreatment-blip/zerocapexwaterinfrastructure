@@ -254,31 +254,33 @@
     }
     .logo-grid {
       display: grid;
-      grid-template-columns: repeat(9, minmax(110px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(9, minmax(120px, 1fr));
+      gap: 12px;
     }
     .logo-pill {
-      min-height: 64px;
+      min-height: 86px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 10px;
+      padding: 8px;
       border-radius: 16px;
       border: 1px solid #dbe6f0;
       background: linear-gradient(180deg, #fff 0%, #f7fafc 100%);
       font-size: 12px;
       color: #64748b;
       font-weight: 700;
-      filter: grayscale(1);
+      overflow: hidden;
     }
     .logo-pill img {
       max-width: 100%;
-      max-height: 34px;
+      max-height: 58px;
       width: auto;
       height: auto;
       object-fit: contain;
       display: block;
+      transform: scale(1.18);
+      transform-origin: center;
     }
 
     .grid-2 {
